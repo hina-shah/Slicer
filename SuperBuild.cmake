@@ -192,8 +192,8 @@ Slicer_Remote_Add(jqPlot
 list(APPEND Slicer_REMOTE_DEPENDENCIES jqPlot)
 
 Slicer_Remote_Add(OpenIGTLinkIF
-  GIT_REPOSITORY ${git_protocol}://github.com/openigtlink/OpenIGTLinkIF.git
-  GIT_TAG bd4d34f17cdf5d8fcd29ffb84e1a7eab88737513
+  GIT_REPOSITORY ${git_protocol}://github.com/jcfr/OpenIGTLinkIF.git
+  GIT_TAG cbfa56f870742773d4749be948a0bfac89a449ba
   OPTION_NAME Slicer_BUILD_OpenIGTLinkIF
   OPTION_DEPENDS "Slicer_BUILD_QTLOADABLEMODULES;Slicer_USE_OpenIGTLink"
   LABELS REMOTE_MODULE
@@ -205,7 +205,7 @@ mark_as_advanced(Slicer_BUILD_MULTIVOLUME_SUPPORT)
 
 Slicer_Remote_Add(MultiVolumeExplorer
   GIT_REPOSITORY ${git_protocol}://github.com/fedorov/MultiVolumeExplorer.git
-  GIT_TAG 7e4425257c8e8e9ad637ccca99249b1b36b12296
+  GIT_TAG 88d837c49629688b1e3c009009836c25b6d20a6d
   OPTION_NAME Slicer_BUILD_MultiVolumeExplorer
   OPTION_DEPENDS "Slicer_BUILD_QTLOADABLEMODULES;Slicer_BUILD_MULTIVOLUME_SUPPORT;Slicer_USE_PYTHONQT"
   LABELS REMOTE_MODULE
@@ -300,7 +300,7 @@ list_conditional_append(Slicer_BUILD_OtsuThresholdImageFilter Slicer_REMOTE_DEPE
 
 Slicer_Remote_Add(DataStore
   GIT_REPOSITORY "${git_protocol}://github.com/Slicer/Slicer-DataStore"
-  GIT_TAG "6c3fb92da5b4a9f8c13781add66a29f9b2bf8ab0"
+  GIT_TAG "eb293a00b5acf1675479f0402a04e0c51d659f8d"
   OPTION_NAME Slicer_BUILD_DataStore
   LABELS REMOTE_MODULE
   )

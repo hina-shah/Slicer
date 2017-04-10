@@ -47,7 +47,7 @@ endif()
 set(lib_name ${PROJECT_NAME})
 set(targets_to_export ${lib_name})
 
-add_library(${lib_name}
+add_library(${lib_name} STATIC
   ${KIT_SRCS}
   ${KIT_MOC_CXX}
   )

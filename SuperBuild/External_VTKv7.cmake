@@ -120,7 +120,7 @@ if((NOT DEFINED VTK_DIR OR NOT DEFINED VTK_SOURCE_DIR) AND NOT ${CMAKE_PROJECT_N
 
   ExternalProject_SetIfNotDefined(
     ${CMAKE_PROJECT_NAME}_${proj}_GIT_TAG
-    "a024cefc2acf25350734e6f04d2562f9a6a3b124"
+    "685b308872d7373cf4bcf913b2b290fb80af7bdc"
     QUIET
     )
 

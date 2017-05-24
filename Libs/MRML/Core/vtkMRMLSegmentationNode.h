@@ -22,15 +22,15 @@
 #define __vtkMRMLSegmentationNode_h
 
 // MRML includes
-#include <vtkMRML.h>
-#include <vtkMRMLDisplayableNode.h>
-#include <vtkMRMLColorTableNode.h>
+#include "vtkMRMLNode.h"
+#include "vtkMRMLDisplayableNode.h"
+#include "vtkMRMLColorTableNode.h"
 
 // STD includes
 #include <cstdlib>
 
 // vtkSegmentationCore includes
-#include "vtkSegmentation.h"
+#include <vtkSegmentation.h>
 
 class vtkCallbackCommand;
 class vtkMRMLScene;

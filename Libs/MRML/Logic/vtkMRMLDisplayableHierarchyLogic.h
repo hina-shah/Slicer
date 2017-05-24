@@ -16,7 +16,7 @@
 #define __vtkMRMLDisplayableHierarchyLogic_h
 
 // MRML includes
-#include <vtkMRMLAbstractLogic.h>
+#include "vtkMRMLAbstractLogic.h"
 class vtkMRMLDisplayableNode;
 class vtkMRMLDisplayableHierarchyNode;
 

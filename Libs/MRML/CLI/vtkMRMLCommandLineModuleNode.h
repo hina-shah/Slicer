@@ -16,7 +16,7 @@
 #define __vtkMRMLCommandLineModuleNode_h
 
 /// MRML includes
-#include <vtkMRMLNode.h>
+#include "vtkMRMLNode.h"
 
 #include "vtkMRMLCLIWin32Header.h"
 

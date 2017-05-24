@@ -16,12 +16,9 @@
 #define __vtkMRMLModelHierarchyLogic_h
 
 // MRML includes
-#include <vtkMRMLAbstractLogic.h>
-//#include <vtkMRML.h>
-//#include <vtkMRMLModelNode.h>
+#include "vtkMRMLAbstractLogic.h"
 class vtkMRMLModelHierarchyNode;
 class vtkMRMLDisplayableHierarchyNode;
-//#include <vtkMRMLModelHierarchyNode.h>
 
 // STD includes
 #include <cstdlib>

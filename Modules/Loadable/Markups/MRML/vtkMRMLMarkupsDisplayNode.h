@@ -136,7 +136,7 @@ public:
 
   /// Set opacity of projection on the 2D viewers
   /// 0.6 by default
-  vtkSetClampMacro(SliceProjectionOpacity, double, 0.0, 1.0);
+  vtkSetClampMacro(SliceProjectionOpacity,double,0.0,1.0);
   vtkGetMacro(SliceProjectionOpacity, double);
 
   /// Set projection color to be the same as the fiducial color

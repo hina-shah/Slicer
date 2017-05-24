@@ -29,8 +29,8 @@
 #define __vtkMRMLSubjectHierarchyNode_h
 
 // MRML includes
-#include <vtkMRMLNode.h>
-#include <vtkMRMLSubjectHierarchyConstants.h>
+#include "vtkMRMLNode.h"
+#include "vtkMRMLSubjectHierarchyConstants.h"
 
 class vtkCallbackCommand;
 class vtkMRMLTransformNode;

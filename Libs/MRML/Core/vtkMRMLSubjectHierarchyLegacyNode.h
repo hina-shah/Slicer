@@ -29,7 +29,7 @@
 #define __vtkMRMLSubjectHierarchyLegacyNode_h
 
 // MRML includes
-#include <vtkMRMLHierarchyNode.h>
+#include "vtkMRMLHierarchyNode.h"
 
 // STD includes
 #include <map>

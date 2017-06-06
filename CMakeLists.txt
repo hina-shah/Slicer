@@ -606,6 +606,7 @@ else()
     list(APPEND Slicer_REQUIRED_QT_MODULES
       WebEngine
       WebEngineWidgets
+      WebChannel
       )
   endif()
   if(Slicer_BUILD_EXTENSIONMANAGER_SUPPORT)

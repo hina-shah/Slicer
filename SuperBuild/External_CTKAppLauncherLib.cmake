@@ -26,9 +26,20 @@ if(NOT DEFINED CTKAppLauncherLib_DIR AND NOT ${CMAKE_PROJECT_NAME}_USE_SYSTEM_${
 
   ExternalProject_SetIfNotDefined(
     ${CMAKE_PROJECT_NAME}_${proj}_GIT_TAG
-    "5b592f1baaa7dd41d68e1cd56a2a82e298196ebe"
+    "8370eb17acea74c92452839167e3e47f6e804e0c"
     QUIET
     )
+
+  set(EXTERNAL_PROJECT_OPTIONAL_ARGS)
+  if(Slicer_REQUIRED_QT_VERSION VERSION_LESS "5")
+      list(APPEND EXTERNAL_PROJECT_OPTIONAL_ARGS
+        -DQT_QMAKE_EXECUTABLE:FILEPATH=${QT_QMAKE_EXECUTABLE}
+      )
+  else()
+      list(APPEND EXTERNAL_PROJECT_OPTIONAL_ARGS
+        -DQt5_DIR:FILEPATH=${Qt5_DIR}
+      )
+  endif()
 
   ExternalProject_Add(${proj}
     ${${proj}_EP_ARGS}
@@ -42,9 +53,9 @@ if(NOT DEFINED CTKAppLauncherLib_DIR AND NOT ${CMAKE_PROJECT_NAME}_USE_SYSTEM_${
       -DCMAKE_C_COMPILER:FILEPATH=${CMAKE_C_COMPILER}
       -DCMAKE_C_FLAGS:STRING=${ep_common_c_flags}
       -DBUILD_TESTING:BOOL=OFF
-      -DQT_QMAKE_EXECUTABLE:FILEPATH=${QT_QMAKE_EXECUTABLE}
       # XXX Revisit this when visibility flags will directly be used in Slicer
       -DCTKAppLauncher_VISIBILITY_HIDDEN:BOOL=OFF
+      ${EXTERNAL_PROJECT_OPTIONAL_ARGS}
     INSTALL_COMMAND ""
     DEPENDS
       ${${proj}_DEPENDENCIES}

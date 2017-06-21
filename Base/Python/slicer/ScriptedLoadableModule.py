@@ -70,10 +70,7 @@ class ScriptedLoadableModuleWidget:
     self.moduleName = self.__class__.__name__
     if self.moduleName.endswith('Widget'):
       self.moduleName = self.moduleName[:-6]
-    settings = qt.QSettings()
-    self.developerMode = settings.value('Developer/DeveloperMode')
-    if not type(self.developerMode) == bool: # Qt4
-      self.developerMode = self.developerMode.lower() == 'true'
+    self.developerMode = slicer.util.settingsValue('Developer/DeveloperMode', False, converter=slicer.util.toBool)
     if not parent:
       self.parent = slicer.qMRMLWidget()
       self.parent.setLayout(qt.QVBoxLayout())

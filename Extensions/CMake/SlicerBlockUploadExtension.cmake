@@ -1,3 +1,13 @@
+set(_major)
+set(_minor)
+
+if(Slicer_REQUIRED_QT_VERSION VERSION_LESS "5")
+  set(_major "QT_VERSION_MAJOR")
+  set(_minor "QT_VERSION_MINOR")
+else()
+  set(_major "Qt5_VERSION_MAJOR")
+  set(_minor "Qt5_VERSION_MINOR")
+endif()
 #-----------------------------------------------------------------------------
 # Sanity checks
 set(expected_defined_vars
@@ -10,8 +20,8 @@ set(expected_defined_vars
   EXTENSION_SOURCE_DIR
   EXTENSION_SUPERBUILD_BINARY_DIR
   GIT_EXECUTABLE
-  QT_VERSION_MAJOR
-  QT_VERSION_MINOR
+  ${_major}
+  ${_minor}
   Slicer_CMAKE_DIR
   Slicer_DIR
   Slicer_EXTENSION_CMAKE_GENERATOR
@@ -66,7 +76,7 @@ set(CMAKE_CXX_COMPILER \"${CMAKE_CXX_COMPILER}\")
 set(BUILD_TESTING \"${BUILD_TESTING}\")
 set(RUN_CTEST_SUBMIT \"${RUN_CTEST_SUBMIT}\")
 set(CTEST_SITE \"${CTEST_SITE}\")
-set(EXTENSION_BUILD_OPTIONS_STRING \"${EXTENSION_BITNESS}bits-Qt${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}\")
+set(EXTENSION_BUILD_OPTIONS_STRING \"${EXTENSION_BITNESS}bits-Qt${${_major}}.${${_minor}}\")
 set(EXTENSION_COMPILER \"${EXTENSION_COMPILER}\")
 set(EXTENSION_NAME \"${EXTENSION_NAME}\")
 set(EXTENSION_CATEGORY \"${EXTENSION_CATEGORY}\")

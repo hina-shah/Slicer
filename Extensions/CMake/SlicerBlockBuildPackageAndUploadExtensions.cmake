@@ -1,10 +1,22 @@
+set(_major)
+set(_minor)
+
+if(Slicer_REQUIRED_QT_VERSION VERSION_LESS "5")
+  set(_major "QT_VERSION_MAJOR")
+  set(_minor "QT_VERSION_MINOR")
+else()
+  set(_major "Qt5_VERSION_MAJOR")
+  set(_minor "Qt5_VERSION_MINOR")
+endif()
+
+message(STATUS "****** _major is ${_major} and _minor is ${_minor}, value in major is: ${${_major}} *********")
 
 #-----------------------------------------------------------------------------
 # Sanity checks
 set(expected_defined_vars
   CMAKE_GENERATOR
-  QT_VERSION_MAJOR
-  QT_VERSION_MINOR
+  ${_major}
+  ${_minor}
   Slicer_EXTENSIONS_TRACK_QUALIFIER
   Slicer_WC_REVISION
   )

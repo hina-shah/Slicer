@@ -118,3 +118,12 @@ if(NOT Slicer_SOURCE_DIR)
   set(_project_name ${PROJECT_NAME})
 endif()
 message(STATUS "Configuring ${_project_name} with Qt ${QT_VERSION_MAJOR}.${QT_VERSION_MINOR}.${QT_VERSION_PATCH} (using modules: ${command_separated_module_list})")
+
+# Qt5 does not suupport cmake variables for plugins and binary directores.
+# Finding them from Qt5_DIR
+if(Slicer_REQUIRED_QT_VERSION VERSION_GREATER "4.9")
+  set(QT_PLUGINS_DIR "${Qt5_DIR}/../../../plugins")
+  set(QT_BINARY_DIR "${Qt5_DIR}/../../../bin")
+  message(STATUS "SETTINGS PLUGIN DIRECTORY: ${QT_PLUGINS_DIR}")
+  message(STATUS "SETTINGS BINARY DIRECTORY: ${QT_BINARY_DIR}")
+endif()

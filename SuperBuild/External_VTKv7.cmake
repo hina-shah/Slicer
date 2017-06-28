@@ -118,9 +118,17 @@ if((NOT DEFINED VTK_DIR OR NOT DEFINED VTK_SOURCE_DIR) AND NOT ${CMAKE_PROJECT_N
     QUIET
     )
 
+set(_git_tag)
+if("${Slicer_VTK_VERSION_MAJOR}" STREQUAL "7")
+  set(_git_tag "a024cefc2acf25350734e6f04d2562f9a6a3b124")
+elseif("${Slicer_VTK_VERSION_MAJOR}" STREQUAL "8")
+  set(_git_tag "b10575a344b34f3c780c26a22183fdf0b208753e")
+else()
+  message(FATAL_ERROR "error: Unsupported Slicer_VTK_VERSION_MAJOR: ${Slicer_VTK_VERSION_MAJOR}")
+endif()
   ExternalProject_SetIfNotDefined(
     ${CMAKE_PROJECT_NAME}_${proj}_GIT_TAG
-    "685b308872d7373cf4bcf913b2b290fb80af7bdc"
+    ${_git_tag}
     QUIET
     )
 

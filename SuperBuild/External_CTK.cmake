@@ -76,13 +76,15 @@ if(NOT DEFINED CTK_DIR AND NOT ${CMAKE_PROJECT_NAME}_USE_SYSTEM_${proj})
 
   ExternalProject_SetIfNotDefined(
     ${CMAKE_PROJECT_NAME}_${proj}_GIT_REPOSITORY
-    "${git_protocol}://github.com/commontk/CTK.git"
+    #"${git_protocol}://github.com/commontk/CTK.git"
+    # TEMP
+    "${git_protocol}://github.com/msmolens/CTK.git"
     QUIET
     )
 
   ExternalProject_SetIfNotDefined(
     ${CMAKE_PROJECT_NAME}_${proj}_GIT_TAG
-    "0eabfdef78b6a29db828c64d2a10f89f48e9429e"
+    "69a8fcb7f507a5995dfa249b743cbef126166563"
     QUIET
     )
 

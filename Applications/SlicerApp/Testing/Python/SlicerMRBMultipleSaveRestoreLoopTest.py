@@ -95,7 +95,7 @@ execfile('/Users/pieper/slicer4/latest/Slicer/Applications/SlicerApp/Testing/Pyt
       sceneSaveDirectory = self.tempDirectory('__scene__')
       mrbFilePath = self.tempDirectory('__mrb__') + '/SlicerMRBMultipleSaveRestoreLoop-' + str(i) + '.mrb'
       self.delayDisplay("Saving mrb to: %s" % mrbFilePath)
-      screenShot = ctk.grabWidget(widget)
+      screenShot = ctk.ctkWidgetsUtils.grabWidget(widget)
       self.assertTrue(
         ioManager.saveScene(mrbFilePath, screenShot)
         )

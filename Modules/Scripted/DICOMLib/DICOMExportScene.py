@@ -100,7 +100,7 @@ class DICOMExportScene(object):
 
     # get the screen image
     self.progress('Saving Image...')
-    image = ctk.grabWidget(slicer.util.mainWindow())
+    image = ctk.ctkWidgetsUtils.grabWidget(slicer.util.mainWindow())
     image.save(self.imageFile)
     imageReader = vtk.vtkJPEGReader()
     imageReader.SetFileName(self.imageFile)

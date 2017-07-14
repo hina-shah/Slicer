@@ -234,7 +234,7 @@ class RSNAQuantTutorialTest(unittest.TestCase):
       type = slicer.qMRMLScreenShotDialog.FullLayout
 
     # grab and convert to vtk image data
-    qimage = ctk.grabWidget(widget)
+    qimage = ctk.ctkWidgetsUtils.grabWidget(widget)
     imageData = vtk.vtkImageData()
     slicer.qMRMLUtils().qImageToVtkImageData(qimage,imageData)
 

@@ -38,13 +38,15 @@ if(NOT DEFINED qRestAPI_DIR)
 
   ExternalProject_SetIfNotDefined(
     ${CMAKE_PROJECT_NAME}_${proj}_GIT_REPOSITORY
-    "${git_protocol}://github.com/commontk/qRestAPI.git"
+    #"${git_protocol}://github.com/commontk/qRestAPI.git"
+    # TEMP
+    "${git_protocol}://github.com/msmolens/qRestAPI.git"
     QUIET
     )
 
   ExternalProject_SetIfNotDefined(
     ${CMAKE_PROJECT_NAME}_${proj}_GIT_TAG
-    "d1b07cc3e9dfd0a8a58e41546469a8f7ef5d0998"
+    "95c531d3922d20aaa17b9f71d0896aa8ee9d344c"
     QUIET
     )
 

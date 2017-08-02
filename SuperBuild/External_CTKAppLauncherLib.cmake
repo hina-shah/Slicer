@@ -20,13 +20,15 @@ if(NOT DEFINED CTKAppLauncherLib_DIR AND NOT ${CMAKE_PROJECT_NAME}_USE_SYSTEM_${
 
   ExternalProject_SetIfNotDefined(
     ${CMAKE_PROJECT_NAME}_${proj}_GIT_REPOSITORY
-    "${git_protocol}://github.com/commontk/AppLauncher.git"
+    # "${git_protocol}://github.com/commontk/AppLauncher.git"
+    # TEMP
+    "${git_protocol}://github.com/msmolens/AppLauncher.git"
     QUIET
     )
 
   ExternalProject_SetIfNotDefined(
     ${CMAKE_PROJECT_NAME}_${proj}_GIT_TAG
-    "8370eb17acea74c92452839167e3e47f6e804e0c"
+    "807167d0344289a33c40c4092e3d0ddadf705681"
     QUIET
     )
 
